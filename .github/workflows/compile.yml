@@ -20,7 +20,7 @@ jobs:
     # The type of runner that the job will run on
     strategy:
       matrix:
-        targetplatform: [x86, x64]
+        targetplatform: [x64]
 
     runs-on: windows-latest
 
@@ -44,3 +44,7 @@ jobs:
         with:
           version: '5.15.2'
           tools: 'tools_ifw,4.0,qt.tools.ifw.40 tools_qtcreator,4,qt.tools.qtcreator'
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.2
+        with:
+          vs-version: 15.9.22
